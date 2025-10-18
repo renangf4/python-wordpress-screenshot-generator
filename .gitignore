@@ -1,0 +1,5 @@
+convertidos_png/
+node_modules/
+imagens/
+
+package-lock.json

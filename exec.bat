@@ -1,0 +1,3 @@
+@echo off
+echo Executando converter.py...
+python converter.py
