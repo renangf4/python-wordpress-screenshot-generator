@@ -6,7 +6,7 @@ output_dir = "convertidos_png"
 
 # Dimensões finais desejadas
 LARGURA_FINAL = 1200
-ALTURA_FINAL = 600
+ALTURA_FINAL = 900
 
 # Tolerância para achatar (10%)
 TOLERANCIA_ALTURA = 0.1
@@ -41,11 +41,11 @@ for nome_arquivo in os.listdir(input_dir):
             diferenca_altura = abs(nova_altura - ALTURA_FINAL) / ALTURA_FINAL
             
             if diferenca_altura <= TOLERANCIA_ALTURA:
-                # Achatar para 1200x600
+                # Achatar para 1200x900
                 img_final = img_redimensionada.resize((LARGURA_FINAL, ALTURA_FINAL), Image.Resampling.LANCZOS)
                 print(f"Convertido (achatado): {nome_arquivo} -> screenshot.png")
             else:
-                # Recortar do topo para 1200x600
+                # Recortar do topo para 1200x900
                 if nova_altura > ALTURA_FINAL:
                     # Recortar do topo (começando em y=0)
                     img_final = img_redimensionada.crop((0, 0, LARGURA_FINAL, ALTURA_FINAL))
